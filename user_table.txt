@@ -1,0 +1,1 @@
+default -1 default -1 !=default /home/default /bin/sh - Default user

@@ -1,0 +1,23 @@
+#! /bin/sh
+# /etc/init.d/S02modules
+
+case "$1" in
+	start)
+		echo "Loading modules ..."
+		modprobe wl18xx
+		modprobe wlcore
+		modprobe wlcore-sdio
+		sleep 5
+		modprobe uio_pdrv_genirq
+		modprobe_uio_dmem_genirq
+		sleep 2
+		;;
+	stop)
+		#
+		;;
+	*)
+		#
+		exit 1
+		;;
+esac
+exit 0

@@ -1,0 +1,25 @@
+#! /bin/sh
+
+DESC="iptables"
+NAME=iptables
+CONFIG=/etc/sysconfig/iptables/iptables_conf
+
+case "$1" in
+  start)
+	printf "Setting firewall rules:"
+	iptables-restore $CONFIG
+	echo "OK"
+	;;
+  stop)
+	echo "OK"
+	;;
+  restart|force-reload)
+	echo ""
+	;;
+  *)
+	echo "Usage: $0 {start|stop|restart|force-reload}" >&2
+	exit 1
+	;;
+esac
+
+exit 0

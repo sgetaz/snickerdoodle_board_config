@@ -1,0 +1,17 @@
+#! /bin/sh
+# /etc/init.d/S10wpa
+
+case "$1" in
+    start)
+        wpa_supplicant -d -c/etc/wpa_supplicant.conf -iwlan0 -B
+	;;
+    stop)
+        #
+        ;;
+     *)
+        #
+        exit 1
+        ;;
+esac
+exit 0
+
